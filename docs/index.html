@@ -9,7 +9,6 @@
   <link rel="icon" href="_media/bitcoin/btc.png">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/themes/vue.css">
 
-  <!-- 将自定义样式放在 Github 上会导致加载速度变得非常慢，所以采取直接内嵌的方式 -->
   <style type="text/css">
 
     /* 隐藏头部的目录 */
@@ -411,36 +410,81 @@
 <div id="app"></div>
 <script>
   window.$docsify = {
+    // logo: '/_media/bitcoin/btc1.png',
     maxAge: 100,
-    name: '目录',
-    repo: 'https://weibo.com/longcoiner/profile?rightmod=1&wvr=6&mod=personinfo',
-    search: {
-      paths: 'auto',
-      placeholder: '🔍 Type to search ',
-      noData: '😞 No Results! ',
-      depth: 6
+    name: '投机之旅',
+    search: 'auto',
+    // search: {
+    //   paths: 'auto',
+    //   placeholder: '🔍 Type to search ',
+    //   noData: '😞 No Results! ',
+    //   depth: 6
+    // },
+    // 完整配置参数
+    // search: {
+    //   maxAge: 86400000, // 过期时间，单位毫秒，默认一天
+    //   paths: [], // or 'auto'
+    //   placeholder: 'Type to search',
+    //
+    //   // 支持本地化
+    //   placeholder: {
+    //     '/zh-cn/': '搜索',
+    //     '/': 'Type to search'
+    //   },
+    //
+    //   noData: 'No Results!',
+    //
+    //   // 支持本地化
+    //   noData: {
+    //     '/zh-cn/': '找不到结果',
+    //     '/': 'No Results'
+    //   },
+    //
+    //   // 搜索标题的最大层级, 1 - 6
+    //   depth: 2,
+    //
+    //   hideOtherSidebarContent: false, // 是否隐藏其他侧边栏内容
+    //
+    //   // 避免搜索索引冲突
+    //   // 同一域下的多个网站之间
+    //   namespace: 'website-1',
+    //
+    //   // 使用不同的索引作为路径前缀（namespaces）
+    //   // 注意：仅适用于 paths: 'auto' 模式
+    //   //
+    //   // 初始化索引时，我们从侧边栏查找第一个路径
+    //   // 如果它与列表中的前缀匹配，我们将切换到相应的索引
+    //   pathNamespaces: ['/zh-cn', '/ru-ru', '/ru-ru/v1'],
+    //
+    //   // 您可以提供一个正则表达式来匹配前缀。在这种情况下，
+    //   // 匹配到的字符串将被用来识别索引
+    //   pathNamespaces: /^(\/(zh-cn|ru-ru))?(\/(v1|v2))?/
+    // },
+    formatUpdated: '{YYYY}-{MM}-{DD} {HH}:{mm}:{ss}',
+    formatUpdated: function(time) {
+      // ...
+
+      return time;
+    },
+    count:{
+      countable:true,
+      fontsize:'0.9em',
+      color:'rgb(90,90,90)',
+      language:'chinese'
     },
     coverpage: true,
-    formatUpdated: '{YYYY}-{MM}-{DD} {HH}:{mm}:{ss}',
-    // plugins: [
-    //   function (hook, vm) {
-    //     hook.beforeEach(function (html) {
-    //       return html
-    //           + '<br/>'
-    //           + '更新时间：{docsify-updated} '
-    //     })
-    //   }
-    // ]
+    // loadNavbar: true,
+    // loadSidebar: true,
   }
 </script>
+
 <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
-<script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.js"></script>
-<script src="//cdn.jsdelivr.net/npm/docsify-copy-code"></script>
-<script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-java.min.js"></script>
-<script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-sql.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
-<script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-go.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-markdown.min.js"></script>
+<script src="//unpkg.com/docsify-count/dist/countable.js"></script>
+<script src="//cdn.jsdelivr.net/npm/docsify-copy-code"></script>
+
 </body>
 
 </html>
